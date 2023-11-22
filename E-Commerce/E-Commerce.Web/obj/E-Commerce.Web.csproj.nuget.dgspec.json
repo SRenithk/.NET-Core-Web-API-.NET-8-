@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Renith Kumar\\Learning\\.NET\\.NET-Core-Web-API-.NET-8-\\E-Commerce\\E-Commerce.Web\\E-Commerce.Web.csproj": {}
+    "D:\\SRenithK\\Learning\\.NET Core\\.NET-Core-Web-API-.NET-8-\\E-Commerce\\E-Commerce.Web\\E-Commerce.Web.csproj": {}
   },
   "projects": {
-    "D:\\Renith Kumar\\Learning\\.NET\\.NET-Core-Web-API-.NET-8-\\E-Commerce\\E-Commerce.Web\\E-Commerce.Web.csproj": {
+    "D:\\SRenithK\\Learning\\.NET Core\\.NET-Core-Web-API-.NET-8-\\E-Commerce\\E-Commerce.Web\\E-Commerce.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Renith Kumar\\Learning\\.NET\\.NET-Core-Web-API-.NET-8-\\E-Commerce\\E-Commerce.Web\\E-Commerce.Web.csproj",
+        "projectUniqueName": "D:\\SRenithK\\Learning\\.NET Core\\.NET-Core-Web-API-.NET-8-\\E-Commerce\\E-Commerce.Web\\E-Commerce.Web.csproj",
         "projectName": "E-Commerce.Web",
-        "projectPath": "D:\\Renith Kumar\\Learning\\.NET\\.NET-Core-Web-API-.NET-8-\\E-Commerce\\E-Commerce.Web\\E-Commerce.Web.csproj",
-        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "D:\\Renith Kumar\\Learning\\.NET\\.NET-Core-Web-API-.NET-8-\\E-Commerce\\E-Commerce.Web\\obj\\",
+        "projectPath": "D:\\SRenithK\\Learning\\.NET Core\\.NET-Core-Web-API-.NET-8-\\E-Commerce\\E-Commerce.Web\\E-Commerce.Web.csproj",
+        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
+        "outputPath": "D:\\SRenithK\\Learning\\.NET Core\\.NET-Core-Web-API-.NET-8-\\E-Commerce\\E-Commerce.Web\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
