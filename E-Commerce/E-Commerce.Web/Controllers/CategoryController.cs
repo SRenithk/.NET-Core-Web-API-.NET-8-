@@ -45,11 +45,12 @@ namespace E_Commerce.Web.Controllers
 
         [HttpPost]
         [Route("Create")]
+
         public IActionResult Create([FromBody] Category category) //or public ActionResult<Category> which allows to return category 
         {
             _dbcontext.Categories.Add(category);
             _dbcontext.SaveChanges();
-            return Ok();
+            return Ok(category);
             //or return Ok(category)    - IActionResult
             //or return category        - ActionResult
         }
@@ -58,20 +59,21 @@ namespace E_Commerce.Web.Controllers
         [Route("Update")]
         public IActionResult Update([FromBody] Category category)
         {
+            //Todo Validation
             _dbcontext.Categories.Update(category);
             _dbcontext.SaveChanges();
-            return NoContent();
+            return Ok(category);
         }
 
         [HttpDelete]
         [Route("Delete")]
-        public IActionResult DeleteById(Category category, int id) {
+        public IActionResult DeleteById(int id) {
 
-            var value = _dbcontext.Categories.FirstOrDefault(x => x.Id == id);
+            var category = _dbcontext.Categories.FirstOrDefault(x => x.Id == id);
 
-            if (value == null) return NotFound();
+            if (category == null) return NotFound();
 
-            _dbcontext.Categories.Remove(value);
+            _dbcontext.Categories.Remove(category);
             _dbcontext.SaveChanges();
             return Ok($"Successfully Removed of id - {id}");
         }
