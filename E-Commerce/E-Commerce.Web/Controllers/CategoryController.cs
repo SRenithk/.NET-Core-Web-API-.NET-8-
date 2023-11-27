@@ -1,5 +1,5 @@
-﻿using E_Commerce.Web.Data;
-using E_Commerce.Web.Models;
+﻿using E_Commerce.Domain.Models;
+using E_Commerce.Infrastructure.Data;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 

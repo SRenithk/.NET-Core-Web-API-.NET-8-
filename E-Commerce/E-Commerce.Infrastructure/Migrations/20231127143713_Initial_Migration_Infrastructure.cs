@@ -2,10 +2,10 @@
 
 #nullable disable
 
-namespace E_Commerce.Web.Migrations
+namespace E_Commerce.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial_Migration : Migration
+    public partial class Initial_Migration_Infrastructure : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

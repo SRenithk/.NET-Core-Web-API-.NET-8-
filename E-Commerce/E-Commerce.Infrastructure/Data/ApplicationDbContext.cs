@@ -1,7 +1,12 @@
-﻿using E_Commerce.Web.Models;
+﻿using E_Commerce.Domain.Models;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace E_Commerce.Web.Data
+namespace E_Commerce.Infrastructure.Data
 {
     public class ApplicationDbContext : DbContext
     {
