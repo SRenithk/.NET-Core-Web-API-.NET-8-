@@ -1,0 +1,23 @@
+﻿using E_Commerce.Infrastructure.Repositories;
+using E_Commerce.Infrastructure.Repositories.Interfaces;
+using Microsoft.Extensions.DependencyInjection;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace E_Commerce.Infrastructure
+{
+    public static class InfrastructureRegistration
+    {
+        public static IServiceCollection AddInfrastructureServices(this IServiceCollection services )
+        {
+            services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
+
+            return services;
+        }
+    }
+}
