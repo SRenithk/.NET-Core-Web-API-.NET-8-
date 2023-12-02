@@ -1,6 +1,6 @@
-﻿using E_Commerce.Domain.Models;
+﻿using E_Commerce.Domain.Contracts;
+using E_Commerce.Domain.Models;
 using E_Commerce.Infrastructure.Data;
-using E_Commerce.Infrastructure.Repositories.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -40,7 +40,7 @@ namespace E_Commerce.Web.Controllers
 
         //    var value = _dbcontext.Categories.FirstOrDefault(x => x.Id == id);
 
-        //    if (value == null)  return NotFound($"Category not found for id - {id}"); 
+        //    if (value == null) return NotFound($"Category not found for id - {id}");
 
         //    return Ok(value);
         //}
@@ -69,7 +69,8 @@ namespace E_Commerce.Web.Controllers
 
         //[HttpDelete]
         //[Route("Delete")]
-        //public IActionResult DeleteById(int id) {
+        //public IActionResult DeleteById(int id)
+        //{
 
         //    var category = _dbcontext.Categories.FirstOrDefault(x => x.Id == id);
 
@@ -81,21 +82,78 @@ namespace E_Commerce.Web.Controllers
         //}
         #endregion
 
+        #region Encapsulation New after Repo
         private readonly ICategoryRepository _categoryRepository;
-
         public CategoryController(ICategoryRepository categoryRepository)
         {
             _categoryRepository = categoryRepository;
         }
+        #endregion
 
+        #region Controller New
         [HttpGet]
         [Route("GetAll")]
-        public ActionResult<IEnumerable<Category>> GetAll()
+        public async Task<ActionResult> GetAll()
         {
-            var category =  _categoryRepository.GetAllAsync();
-            return Ok(category);
-
+            if(!ModelState.IsValid)
+            {
+                return NotFound();
+            }
+            return Ok(await _categoryRepository.GetAllAsync());
         }
 
+        [HttpGet]
+        [Route("GetById")]
+        public async Task<ActionResult> GetById(int id)
+        {
+            var category = await _categoryRepository.GetByIdAsync(id);
+            if(category == null)
+            {
+                return NotFound($"The data with Id:'{id}' was Not found");
+            }
+            return Ok(category);
+        }
+
+
+        [HttpPost]
+        [Route("Create")]
+        public async Task<ActionResult> Create(Category category)
+        {
+            if(category == null)
+            {
+                return BadRequest();
+            }
+            await _categoryRepository.CreateAsync(category);
+            return Ok(category);
+        }
+
+        [HttpPut]
+        [Route("Update")]
+        public async Task<ActionResult> Update(Category category)
+        {
+            var findcatgory = await _categoryRepository.GetByIdAsync(category.Id);
+            if(findcatgory == null)
+            {
+                return NotFound();
+            }
+            await _categoryRepository.Update(category);
+            return Ok(category);
+        }
+
+
+        [HttpDelete]
+        [Route("Delete")]
+
+        public async Task<IActionResult> Delete(int id)
+        {
+            var findCategory = await _categoryRepository.GetByIdAsync(id);
+            if(findCategory == null)
+            {
+                return NotFound();
+            }
+            await _categoryRepository.DeleteAsync(findCategory);
+            return Ok($"Successfull Deleted with Id '{id}'");
+        }
+        #endregion
     }
 }

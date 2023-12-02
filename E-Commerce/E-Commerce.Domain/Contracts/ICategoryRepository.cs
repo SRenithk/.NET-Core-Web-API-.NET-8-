@@ -1,15 +1,15 @@
 ﻿using E_Commerce.Domain.Models;
+using E_Commerce.Domain.Shared;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace E_Commerce.Infrastructure.Repositories.Interfaces
+namespace E_Commerce.Domain.Contracts
 {
     public interface ICategoryRepository : IGenericRepository<Category>
     {
-        Task<Category> UpdateAsync(Category category);
+        Task Update(Category category);
     }
 }

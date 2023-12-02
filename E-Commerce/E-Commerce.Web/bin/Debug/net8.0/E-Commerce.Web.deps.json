@@ -909,7 +909,8 @@
         "dependencies": {
           "E-Commerce.Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "8.0.0",
-          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.0"
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.0",
+          "Microsoft.Extensions.DependencyInjection": "8.0.0"
         },
         "runtime": {
           "E-Commerce.Infrastructure.dll": {}
