@@ -11,7 +11,7 @@ namespace E_Commerce.Application.Services.Interfaces
     {
         Task<IEnumerable<CategoryDto>> GetAllAsync();
         Task<CategoryDto> GetByIdAsync(int id);
-        Task<CategoryDto> CreateAsync(CategoryDto categoryDto);
+        Task<CreateCategoryDto> CreateAsync(CreateCategoryDto categoryDto);
         Task UpdateAsync(CategoryDto categoryDto);
         Task DeleteAsync(int id);
     }

@@ -1,4 +1,7 @@
-﻿using E_Commerce.Domain.Contracts;
+﻿using E_Commerce.Application.DTO.Category;
+using E_Commerce.Application.Services;
+using E_Commerce.Application.Services.Interfaces;
+using E_Commerce.Domain.Contracts;
 using E_Commerce.Domain.Models;
 using E_Commerce.Infrastructure.Data;
 using Microsoft.AspNetCore.Http;
@@ -82,11 +85,11 @@ namespace E_Commerce.Web.Controllers
         //}
         #endregion
 
-        #region Encapsulation New after Repo
-        private readonly ICategoryRepository _categoryRepository;
-        public CategoryController(ICategoryRepository categoryRepository)
+        #region Encapsulation New after Services
+        private readonly ICategoryService _categoryService;
+        public CategoryController(ICategoryService categoryService)
         {
-            _categoryRepository = categoryRepository;
+            _categoryService = categoryService;
         }
         #endregion
 
@@ -99,14 +102,14 @@ namespace E_Commerce.Web.Controllers
             {
                 return NotFound();
             }
-            return Ok(await _categoryRepository.GetAllAsync());
+            return Ok(await _categoryService.GetAllAsync());
         }
 
         [HttpGet]
         [Route("GetById")]
         public async Task<ActionResult> GetById(int id)
         {
-            var category = await _categoryRepository.GetByIdAsync(id);
+            var category = await _categoryService.GetByIdAsync(id);
             if(category == null)
             {
                 return NotFound($"The data with Id:'{id}' was Not found");
@@ -117,27 +120,23 @@ namespace E_Commerce.Web.Controllers
 
         [HttpPost]
         [Route("Create")]
-        public async Task<ActionResult> Create(Category category)
+        public async Task<ActionResult> Create(CreateCategoryDto categoryDto)
         {
-            if(category == null)
-            {
-                return BadRequest();
-            }
-            await _categoryRepository.CreateAsync(category);
-            return Ok(category);
+            await _categoryService.CreateAsync(categoryDto);
+            return Ok(categoryDto);
         }
 
         [HttpPut]
         [Route("Update")]
-        public async Task<ActionResult> Update(Category category)
+        public async Task<ActionResult> Update(CategoryDto categoryDto)
         {
-            var findcatgory = await _categoryRepository.GetByIdAsync(category.Id);
+            var findcatgory = await _categoryService.GetByIdAsync(categoryDto.Id);
             if(findcatgory == null)
             {
                 return NotFound();
             }
-            await _categoryRepository.Update(category);
-            return Ok(category);
+            await _categoryService.UpdateAsync(categoryDto);
+            return Ok(categoryDto);
         }
 
 
@@ -146,12 +145,12 @@ namespace E_Commerce.Web.Controllers
 
         public async Task<IActionResult> Delete(int id)
         {
-            var findCategory = await _categoryRepository.GetByIdAsync(id);
+            var findCategory = await _categoryService.GetByIdAsync(id);
             if(findCategory == null)
             {
                 return NotFound();
             }
-            await _categoryRepository.DeleteAsync(findCategory);
+            await _categoryService.DeleteAsync(id);
             return Ok($"Successfull Deleted with Id '{id}'");
         }
         #endregion

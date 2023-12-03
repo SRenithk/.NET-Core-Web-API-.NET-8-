@@ -1,11 +1,13 @@
 using E_Commerce.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
-using E_Commerce.Infrastructure; //Manual Entry
+using E_Commerce.Infrastructure;
+using E_Commerce.Application; //Manual Entry
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+builder.Services.AddApplicationServices();
 builder.Services.AddInfrastructureServices();
 
 #region CORS Policy
