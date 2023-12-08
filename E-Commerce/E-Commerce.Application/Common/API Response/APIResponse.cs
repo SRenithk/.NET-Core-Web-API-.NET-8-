@@ -7,15 +7,23 @@ using System.Threading.Tasks;
 
 namespace E_Commerce.Application.Common.API_Response
 {
-    partial class APIResponse
+    public class APIResponse
     {
         public HttpStatusCode StatusCode { get; set; }
         public bool IsSuccess { get; set; } = false;
         public object Result { get; set; }
         public string DisplayMessage { get; set; } = "";
-        public List<APIError> ErrorList { get; set; } = new();
-        public List<APIWarning> WarningList { get; set; } = new();
-
-
+        public List<APIError> ErrorList { get; set; } = [];
+        public List<APIWarning> WarningList { get; set; } = [];
+        public void AddError (string errorMessage)
+        {
+            APIError error = new APIError(description: errorMessage);
+            ErrorList.Add(error);
+        }
+        public void AddWarning (string warningMessage) 
+        {
+            APIWarning warning = new APIWarning(description: warningMessage);
+            WarningList.Add(warning);
+        }
     }
 }

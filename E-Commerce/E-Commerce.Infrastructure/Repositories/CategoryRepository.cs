@@ -1,6 +1,7 @@
 ﻿using E_Commerce.Domain.Contracts;
 using E_Commerce.Domain.Models;
 using E_Commerce.Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,7 @@ namespace E_Commerce.Infrastructure.Repositories
 
         public async Task Update(Category category)
         {
+            //var entity = await _dbcontext.Categories.FirstOrDefaultAsync(x => x.Id == category.Id);
             _dbcontext.Update(category);
             await _dbcontext.SaveChangesAsync();
         }

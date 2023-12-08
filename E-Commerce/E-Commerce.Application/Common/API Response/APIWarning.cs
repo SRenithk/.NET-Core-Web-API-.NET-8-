@@ -8,10 +8,10 @@ namespace E_Commerce.Application.Common.API_Response
 {
     public class APIWarning
     {
-        private string _description;
+        public string Description { get; set; }
         public APIWarning(string description)
         {
-            _description = description;
+            Description = description;
         }
     }
 }

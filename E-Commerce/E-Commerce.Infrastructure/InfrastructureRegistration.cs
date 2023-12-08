@@ -15,6 +15,7 @@ namespace E_Commerce.Infrastructure
         {
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddScoped<ICategoryRepository,CategoryRepository>();
+            services.AddScoped<IBrandRepository,BrandRepository>();
             return services;
         }
     }

@@ -9,6 +9,7 @@ namespace E_Commerce.Application.DTO.Category
 {
     public class CategoryDto
     {
+        [Required]
         public int Id { get; set; }
         [Required]
         public string Name { get; set; }
