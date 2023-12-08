@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using E_Commerce.Application.DTO.Brand;
 using E_Commerce.Application.DTO.Category;
+using E_Commerce.Application.DTO.Product;
 using E_Commerce.Domain.Models;
 using System;
 using System.Collections.Generic;
@@ -22,7 +23,10 @@ namespace E_Commerce.Application.Common
             CreateMap<Brand, CreateBrandDto>().ReverseMap();
             CreateMap<Brand, BrandDto>().ReverseMap();
 
-
+            //Product
+            CreateMap<Product,CreateProductDto>().ReverseMap();
+            CreateMap<Product,UpdateProductDto>().ReverseMap();
+            CreateMap<Product,ProductDto>().ReverseMap();
         }
     }
 }
