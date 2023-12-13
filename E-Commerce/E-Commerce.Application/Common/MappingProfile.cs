@@ -26,7 +26,10 @@ namespace E_Commerce.Application.Common
             //Product
             CreateMap<Product,CreateProductDto>().ReverseMap();
             CreateMap<Product,UpdateProductDto>().ReverseMap();
-            CreateMap<Product,ProductDto>().ReverseMap();
+            CreateMap<Product, ProductDto>()
+                .ForMember(x => x.Category, opt => opt.MapFrom(source => source.Category.Name))  // To map the Category Name to Category object which set as Foreign Key, 
+                .ForMember(x => x.Brand, opt => opt.MapFrom(source => source.Brand.Name));       //Additionally we need to Include in Repository and use in Service file
+
         }
     }
 }

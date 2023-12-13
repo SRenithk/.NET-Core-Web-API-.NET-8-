@@ -30,13 +30,15 @@ namespace E_Commerce.Application.Services
 
         public async Task<IEnumerable<ProductDto>> GetAllAsync()
         {
-            var originalEntity = await _productRepository.GetAllAsync();
+            //var originalEntity = await _productRepository.GetAllAsync();
+            var originalEntity = await _productRepository.GetAllProductAsync();
             return _mapper.Map<IEnumerable<ProductDto>>(originalEntity);
         }
 
         public async Task<ProductDto> GetByIdAsync(int id)
         {
-            var entity = await _productRepository.GetByIdAsync(id);
+            //var entity = await _productRepository.GetByIdAsync(id);
+            var entity = await _productRepository.GetProductByIdAsync(id);
             return _mapper.Map<ProductDto>(entity);
         }
 

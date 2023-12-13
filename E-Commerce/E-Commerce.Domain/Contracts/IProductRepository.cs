@@ -9,6 +9,8 @@ namespace E_Commerce.Domain.Contracts
 {
     public interface IProductRepository : IGenericRepository<Product>
     {
+        Task<IEnumerable<Product>> GetAllProductAsync();
+        Task<Product> GetProductByIdAsync(int id);
         Task UpdateAsync(Product product);
     }
 }
