@@ -4552,19 +4552,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Lenovo\\.nuget\\packages\\": {}
+    "C:\\Users\\ASUS\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\SRenithK\\Learning\\.NET Core\\.NET-Core-Web-API-.NET-8-\\E-Commerce\\E-Commerce.Web\\E-Commerce.Web.csproj",
+      "projectUniqueName": "D:\\Renith Kumar\\Learning\\.NET\\.NET-Core-Web-API-.NET-8-\\E-Commerce\\E-Commerce.Web\\E-Commerce.Web.csproj",
       "projectName": "E-Commerce.Web",
-      "projectPath": "D:\\SRenithK\\Learning\\.NET Core\\.NET-Core-Web-API-.NET-8-\\E-Commerce\\E-Commerce.Web\\E-Commerce.Web.csproj",
-      "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-      "outputPath": "D:\\SRenithK\\Learning\\.NET Core\\.NET-Core-Web-API-.NET-8-\\E-Commerce\\E-Commerce.Web\\obj\\",
+      "projectPath": "D:\\Renith Kumar\\Learning\\.NET\\.NET-Core-Web-API-.NET-8-\\E-Commerce\\E-Commerce.Web\\E-Commerce.Web.csproj",
+      "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+      "outputPath": "D:\\Renith Kumar\\Learning\\.NET\\.NET-Core-Web-API-.NET-8-\\E-Commerce\\E-Commerce.Web\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4578,11 +4578,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\SRenithK\\Learning\\.NET Core\\.NET-Core-Web-API-.NET-8-\\E-Commerce\\E-Commerce.Application\\E-Commerce.Application.csproj": {
-              "projectPath": "D:\\SRenithK\\Learning\\.NET Core\\.NET-Core-Web-API-.NET-8-\\E-Commerce\\E-Commerce.Application\\E-Commerce.Application.csproj"
+            "D:\\Renith Kumar\\Learning\\.NET\\.NET-Core-Web-API-.NET-8-\\E-Commerce\\E-Commerce.Application\\E-Commerce.Application.csproj": {
+              "projectPath": "D:\\Renith Kumar\\Learning\\.NET\\.NET-Core-Web-API-.NET-8-\\E-Commerce\\E-Commerce.Application\\E-Commerce.Application.csproj"
             },
-            "D:\\SRenithK\\Learning\\.NET Core\\.NET-Core-Web-API-.NET-8-\\E-Commerce\\E-Commerce.Infrastructure\\E-Commerce.Infrastructure.csproj": {
-              "projectPath": "D:\\SRenithK\\Learning\\.NET Core\\.NET-Core-Web-API-.NET-8-\\E-Commerce\\E-Commerce.Infrastructure\\E-Commerce.Infrastructure.csproj"
+            "D:\\Renith Kumar\\Learning\\.NET\\.NET-Core-Web-API-.NET-8-\\E-Commerce\\E-Commerce.Infrastructure\\E-Commerce.Infrastructure.csproj": {
+              "projectPath": "D:\\Renith Kumar\\Learning\\.NET\\.NET-Core-Web-API-.NET-8-\\E-Commerce\\E-Commerce.Infrastructure\\E-Commerce.Infrastructure.csproj"
             }
           }
         }
