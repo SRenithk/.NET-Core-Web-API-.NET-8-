@@ -25,6 +25,13 @@ namespace E_Commerce.Web.Controllers
             return Ok(await _productService.GetByIdAsync(id));
         }
 
+        [HttpGet]
+        [Route("Filter")]
+        public async Task<ActionResult> GetFilteredProducts(int? categoryId, int brandId)
+        {
+            return Ok(await _productService.GetProductByFilterAsync(categoryId, brandId));
+        }
+
         [HttpPost]
         [Route("Create")]
         public async Task<ActionResult> Create(CreateProductDto createProductDto)

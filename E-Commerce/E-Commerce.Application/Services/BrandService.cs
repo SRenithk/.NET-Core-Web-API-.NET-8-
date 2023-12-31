@@ -3,6 +3,7 @@ using E_Commerce.Application.DTO.Brand;
 using E_Commerce.Application.Services.Interfaces;
 using E_Commerce.Domain.Contracts;
 using E_Commerce.Domain.Models;
+using Microsoft.AspNetCore.Http.HttpResults;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,18 @@ namespace E_Commerce.Application.Services
         }
         public async Task<CreateBrandDto> CreateAsync(CreateBrandDto createBrandDto)
         {
+            //create instance
+            var validator = new CreateBrandDtoValidator();
+
+            // capture Error
+            var validationResult = await validator.ValidateAsync(createBrandDto);
+
+            //if any Error occurs
+            if (validationResult.Errors.Any())
+            {
+                throw new Exception(); // or any custom Exception //or any error msg
+            }
+
             var convertedEntity = _mapper.Map<Brand>(createBrandDto);
             var entity = await _brandRepository.CreateAsync(convertedEntity);
             return _mapper.Map<CreateBrandDto>(entity);

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "X8qlNMKJHs5LTL2t8c/SDNs1ESl2TBmMMWuvTKzE0AtUKfiSXhIcvegvq+vyfpm4rrwZ3ooCSS99MtCgybjCQg==",
+  "dgSpecHash": "FrpHdLViHHxbhApTxx6+dSgg0YiXJXaZBcB3XQQKXn+03YDiX16SDVNqauNb8NeYWARznk/XxXXXKgJa77OnbA==",
   "success": true,
   "projectFilePath": "D:\\SRenithK\\Learning\\.NET Core\\.NET-Core-Web-API-.NET-8-\\E-Commerce\\E-Commerce.Web\\E-Commerce.Web.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,9 @@
     "C:\\Users\\Lenovo\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\fluentvalidation\\11.9.0\\fluentvalidation.11.9.0.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.9.0\\fluentvalidation.dependencyinjectionextensions.11.9.0.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.3.3\\microsoft.codeanalysis.analyzers.3.3.3.nupkg.sha512",

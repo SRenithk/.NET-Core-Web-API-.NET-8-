@@ -12,18 +12,18 @@ namespace E_Commerce.Infrastructure.Repositories
 {
     public class ProductRepository : GenericRepository<Product>, IProductRepository
     {
-        public ProductRepository(ApplicationDbContext dbContext) : base(dbContext)
+        public ProductRepository (ApplicationDbContext dbContext) : base(dbContext)
         {
         }
 
-        public async Task<IEnumerable<Product>> GetAllProductAsync()
+        public async Task<IEnumerable<Product>> GetAllProductAsync() //This method will also be used in Product Service to Filter
         {
             return await _dbcontext.Products.Include(x => x.Category).Include(x=> x.Brand).AsNoTracking().ToListAsync();
         }
 
         public async Task<Product> GetProductByIdAsync(int id)
         {
-            return await _dbcontext.Products.Include(x=>x.Category).Include(x=>x.Brand).FirstOrDefaultAsync(x => x.Id == id);
+            return await _dbcontext.Products.Include(x=>x.Category).Include(x=>x.Brand).AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
         }
 
         public async Task UpdateAsync(Product product)

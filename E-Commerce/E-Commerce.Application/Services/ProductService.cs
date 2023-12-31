@@ -35,6 +35,20 @@ namespace E_Commerce.Application.Services
             return _mapper.Map<IEnumerable<ProductDto>>(originalEntity);
         }
 
+        public async Task<IEnumerable<ProductDto>> GetProductByFilterAsync(int? categoryId, int? brandId)
+        {
+            var filteredEntity = await _productRepository.GetAllProductAsync();
+
+            //Filter
+            if(categoryId > 0)
+                filteredEntity = filteredEntity.Where(x => x.CategoryId == categoryId);
+
+            if (brandId > 0)
+                filteredEntity = filteredEntity.Where(x=>x.BrandId == brandId);
+
+            return _mapper.Map<IEnumerable<ProductDto>>(filteredEntity);
+        }
+
         public async Task<ProductDto> GetByIdAsync(int id)
         {
             //var entity = await _productRepository.GetByIdAsync(id);
