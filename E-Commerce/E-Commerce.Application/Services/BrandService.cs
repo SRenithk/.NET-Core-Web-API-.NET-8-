@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using E_Commerce.Application.DTO.Brand;
+using E_Commerce.Application.Exceptions;
 using E_Commerce.Application.Services.Interfaces;
 using E_Commerce.Domain.Contracts;
 using E_Commerce.Domain.Models;
@@ -32,7 +33,7 @@ namespace E_Commerce.Application.Services
             //if any Error occurs
             if (validationResult.Errors.Any())
             {
-                throw new Exception(); // or any custom Exception //or any error msg
+                throw new BadRequestException("Invalid Brand Input",validationResult); // Custom Exception
             }
 
             var convertedEntity = _mapper.Map<Brand>(createBrandDto);
